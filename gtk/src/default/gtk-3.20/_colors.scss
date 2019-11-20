@@ -1,21 +1,21 @@
 // When color definition differs for dark and light variant
 // it gets @if ed depending on $variant
 @import 'ubuntu-colors';
+@import '../../../../dracula-colors';
 
-$base_color: if($variant == 'light', #ffffff, lighten(desaturate($jet, 20%), 10%));
-$text_color: if($variant == 'light', black, white);
-$bg_color: if($variant == 'light', #F5F6F7, darken($inkstone, 1%));
-$fg_color: if($variant == 'light', $inkstone, $porcelain);
+$base_color: $dracula-background;
+$text_color: $dracula-foreground;
+$bg_color: $dracula-background;
+$fg_color: $dracula-foreground;
 
-$selected_fg_color: #ffffff;
-$selected_bg_color: if($variant == 'light', $orange, darken($orange, 4%));
-
+$selected_fg_color: $dracula-foreground;
+$selected_bg_color: $dracula-selection;
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
 $borders_color: if($variant == 'light', darken($bg_color, 18%), darken($bg_color, 9%));
 $alt_borders_color: if($variant == 'light', darken($bg_color, 24%), darken($bg_color, 18%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.2), transparentize($fg_color, 0.93));
-$link_color: if($variant == 'light', darken($blue, 10%), lighten($blue, 20%));
-$link_visited_color: if($variant == 'light', darken($selected_bg_color, 20%), lighten($selected_bg_color, 10%));
+$link_color: $dracula-pink;
+$link_visited_color: $dracula-purple;
 $top_hilight: $borders_edge;
 $dark_fill: mix($borders_color, $bg_color, 50%);
 $headerbar_color: if($variant == 'light', lighten($bg_color, 5%), darken($bg_color, 3%));
@@ -28,14 +28,14 @@ $scrollbar_slider_color: mix($fg_color, $bg_color, 60%);
 $scrollbar_slider_hover_color: mix($fg_color, $bg_color, 80%);
 $scrollbar_slider_active_color: if($variant=='light', darken($selected_bg_color, 10%), lighten($selected_bg_color, 10%));
 
-$warning_color: $yellow;
-$error_color: $red;
-$success_color: if($variant == 'light', $green, darken($green, 10%));
-$destructive_color: if($variant == 'light', $red, darken($red, 10%));
+$warning_color: $dracula-orange;
+$error_color: $dracula-red;
+$success_color: $dracula-green;
+$destructive_color: darken($red, 10%);
 
-$osd_fg_color: #eeeeec;
-$osd_text_color: white;
-$osd_bg_color: transparentize(lighten($jet, 2%),0.025);
+$osd_fg_color: $dracula-foreground;
+$osd_text_color: $dracula-foreground;
+$osd_bg_color: $dracula-background;
 $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_color, 1), 10%), 0.5);
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: transparentize(black, 0.3);
