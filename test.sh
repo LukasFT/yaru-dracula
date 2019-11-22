@@ -20,4 +20,4 @@ rm ~/.themes/Yaru-dracula || true
 ln -sf "$(pwd)/result/share/themes/Yaru-dark" ~/.themes/Yaru-dracula
 
 nix-build .
-nix-shell -p "${packages[$1]}" --run lxappearance
+nix-shell -p "${packages[$1]}" --run "GTK_DEBUG=interactive lxappearance"
