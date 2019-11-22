@@ -1,8 +1,7 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -i bash -p inkscape optipng
+#! /bin/bash
 
-INKSCAPE="inkscape"
-OPTIPNG="optipng"
+INKSCAPE="/usr/bin/inkscape"
+OPTIPNG="/usr/bin/optipng"
 
 SRC_FILE="assets.svg"
 ASSETS_DIR="assets"
